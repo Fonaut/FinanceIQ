@@ -25,6 +25,10 @@ class TestFinanceIQ(unittest.TestCase):
         with self.assertRaises(ValueError):
             calculate_profit_margin(0, 15000)
 
+    def test_zero_assets(self):
+        with self.assertRaises(ValueError):
+            calculate_roa(15000, 0)
+
 
 if __name__ == "__main__":
     unittest.main()
